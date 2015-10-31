@@ -2,31 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4db2701f-b6d2-4e40-a5e0-5b1b45a1a5ec" name="Default" comment="">
-      <change type="DELETED" beforePath="D:\xampp\htdocs\test.example.com\fight-club\assets\dark_grass.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\test.example.com\fight-club\assets\earth.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\test.example.com\fight-club\assets\enemy-tanks.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\test.example.com\fight-club\assets\light_grass.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\test.example.com\fight-club\assets\light_sand.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\test.example.com\fight-club\assets\logo.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\test.example.com\fight-club\assets\logo.psd" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\test.example.com\fight-club\assets\sand.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\test.example.com\fight-club\assets\scorched_earth.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\test.example.com\fight-club\assets\shadow.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\test.example.com\fight-club\assets\tank1.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\test.example.com\fight-club\assets\tank2.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\test.example.com\fight-club\assets\tank3.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\test.example.com\fight-club\assets\tank4.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\test.example.com\fight-club\assets\tank5.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\test.example.com\fight-club\assets\tank6.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\test.example.com\fight-club\assets\tanks.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\test.example.com\fight-club\assets\tracks.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\test.example.com\fight-club\assets\turret.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\test.example.com\fight-club\test.html" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\test.example.com\fight-club\update.py" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Game.js" afterPath="$PROJECT_DIR$/src/Game.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Player.js" afterPath="$PROJECT_DIR$/src/Player.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Preload.js" afterPath="$PROJECT_DIR$/src/Preload.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server.js" afterPath="$PROJECT_DIR$/server.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="fight-club.iws" />
@@ -75,8 +51,8 @@
       <file leaf-file-name="Game.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Game.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.51877135" vertical-offset="1617" max-vertical-offset="3196">
-              <caret line="113" column="56" selection-start-line="113" selection-start-column="56" selection-end-line="113" selection-end-column="56" />
+            <state vertical-scroll-proportion="0.40614334" vertical-offset="1445" max-vertical-offset="3196">
+              <caret line="99" column="10" selection-start-line="99" selection-start-column="10" selection-end-line="99" selection-end-column="10" />
               <folding />
             </state>
           </provider>
@@ -276,12 +252,20 @@
       <option name="number" value="Default" />
       <updated>1445881301343</updated>
     </task>
+    <task id="LOCAL-00001" summary="player2 animations fix">
+      <created>1446313017664</created>
+      <option name="number" value="00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1446313017664</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -315,9 +299,13 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="false" />
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
+    <MESSAGE value="player2 animations fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="player2 animations fix" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -479,8 +467,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Game.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.51877135" vertical-offset="1617" max-vertical-offset="3196">
-          <caret line="113" column="56" selection-start-line="113" selection-start-column="56" selection-end-line="113" selection-end-column="56" />
+        <state vertical-scroll-proportion="0.40614334" vertical-offset="1445" max-vertical-offset="3196">
+          <caret line="99" column="10" selection-start-line="99" selection-start-column="10" selection-end-line="99" selection-end-column="10" />
           <folding />
         </state>
       </provider>

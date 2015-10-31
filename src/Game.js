@@ -97,7 +97,7 @@ Rhea.Game.prototype = {
         );*/
 
 
-        if (player1.x != Rhea.newInput.x || Math.round(player1.y) != Rhea.newInput.y) {
+        //if (player1.x != Rhea.newInput.x || Math.round(player1.y) != Rhea.newInput.y) {
             //console.log(player1.y+'|'+Rhea.newInput.y);
             //Handle input change here
             //send new values to the server
@@ -107,7 +107,7 @@ Rhea.Game.prototype = {
             Rhea.newInput.velocityY = player1.body.velocity.y;
 
             Rhea.eurecaServer.handleKeys(Rhea.newInput);
-        }
+        //}
 
         //  Collision rules
         this.physics.arcade.collide(player1, platforms);
