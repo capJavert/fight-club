@@ -79,7 +79,7 @@ eurecaServer.exports.handleKeys = function (keys) {
         remote.updateState(updatedClient.id, keys);
 
         //keep last known state so we can send it to new connected clients
-        clients[c].laststate = keys;
+        //clients[c].laststate = keys;
     }
 }
 

@@ -69,6 +69,7 @@ Rhea.Preloader.prototype = {
         this.load.image('ground', '../assets/platform.png');
         this.load.image('star', '../assets/star.png');
         this.load.spritesheet('dude', '../assets/dude.png', 32, 48);
+        this.load.spritesheet('fighter', '../assets/fighter.png', 52, 70);
         this.load.spritesheet('monster', '../assets/baddie.png', 32, 32);
 
         eurecaClientSetup();

@@ -2,6 +2,7 @@ var ready = false;
 var cursors;
 var player1;
 var player2;
+var orientation;
 
 Rhea.Game = function (game) {
     this.platforms;
@@ -46,23 +47,27 @@ Rhea.Game.prototype = {
 
         //create player
         if (Rhea.playersNum == 1) {
-            player1 = new Rhea.Player(game, 150, 450);
+            player1 = new Rhea.Player(game, 150, 450, 4);
             game.add.existing(player1);
 
-            player2 = new Rhea.Player(game, 600, 450);
+            player2 = new Rhea.Player(game, 600, 450, 3);
             game.add.existing(player2);
 
             Rhea.newInput.x = 150;
             Rhea.newInput.y = 450;
+
+            orientation = 1;
         } else {
-            player1 = new Rhea.Player(game, 600, 450);
+            player1 = new Rhea.Player(game, 600, 450, 3);
             game.add.existing(player1);
 
-            player2 = new Rhea.Player(game, 150, 450);
+            player2 = new Rhea.Player(game, 150, 450, 4);
             game.add.existing(player2);
 
             Rhea.newInput.x = 600;
             Rhea.newInput.y = 450;
+
+            orientation = 2;
         }
 
         ready = true;
@@ -92,8 +97,7 @@ Rhea.Game.prototype = {
         );*/
 
 
-        //if (player1.x != Rhea.newInput.x || Math.round(player1.y) != Rhea.newInput.y)
-        //{
+        if (player1.x != Rhea.newInput.x || Math.round(player1.y) != Rhea.newInput.y) {
             //console.log(player1.y+'|'+Rhea.newInput.y);
             //Handle input change here
             //send new values to the server
@@ -103,42 +107,51 @@ Rhea.Game.prototype = {
             Rhea.newInput.velocityY = player1.body.velocity.y;
 
             Rhea.eurecaServer.handleKeys(Rhea.newInput);
-        //
+        }
 
         //  Collision rules
         this.physics.arcade.collide(player1, platforms);
         this.physics.arcade.collide(player2, platforms);
+        this.physics.arcade.collide(player1, player2);
 
         //  Reset the players velocity (movement)
         player1.body.velocity.x = 0;
         player2.body.velocity.x = 0;
 
         if(Rhea.newState.x != -1 || Rhea.newState.y != -1) {
-            //if(Rhea.newState.x != player2.x || Rhea.newState.y != player2.y) {
+            if(Rhea.newState.x != player2.x || Rhea.newState.y != player2.y) {
                 player2.x = Rhea.newState.x;
                 player2.y = Rhea.newState.y;
                 player2.body.velocity.x = Rhea.newState.velocityX;
                 player2.body.velocity.y = Rhea.newState.velocityY;
 
-                if(Rhea.newState.velocityX > 0) player2.animations.play('right');
-                else if(Rhea.newState.velocityX < 0) player2.animations.play('left');
-
+                if (Rhea.newState.velocityX > 0)
+                    if (player1.body.velocity.y < 0 || !player1.body.touching.down) player1.animations.play('jump-right');
+                    else player1.animations.play('right');
+                else if (Rhea.newState.velocityX < 0)
+                    if (player1.body.velocity.y < 0 || !player1.body.touching.down) player1.animations.play('jump-left');
+                    else player1.animations.play('left');
+            }
                 //player2.animations.stop();
         }
+
+        //if(shiftKey) console.log('shift');
 
         if (cursors.left.isDown)
         {
             //  Move to the left
             player1.body.velocity.x = -150;
 
-            player1.animations.play('left');
+            if(player1.body.velocity.y < 0 || !player1.body.touching.down) player1.animations.play('jump-left');
+            else player1.animations.play('left');
         }
         else if (cursors.right.isDown)
         {
             //  Move to the right
             player1.body.velocity.x = 150;
 
-            player1.animations.play('right');
+            if(player1.body.velocity.y < 0 || !player1.body.touching.down) player1.animations.play('jump-right');
+            else player1.animations.play('right');
         }
         else
         {
@@ -146,13 +159,24 @@ Rhea.Game.prototype = {
             player1.animations.stop();
             player2.animations.stop();
 
-            player1.frame = 4;
-            player2.frame = 4;
+            if(orientation == 1) {
+                 player1.frame = 4;
+                 player2.frame = 3;
+             } else {
+                 player1.frame = 3;
+                 player2.frame = 4;
+             }
         }
+
+        if(!player1.body.touching.down)
+            if(orientation == 1) player1.animations.play('jump-right');
+            else player1.animations.play('jump-left');
 
         //  Allow the player to jump if they are touching the ground.
         if (cursors.up.isDown && player1.body.touching.down)
         {
+            player1.animations.play('jump-left');
+
             player1.body.velocity.y = -320;
         }
     }
