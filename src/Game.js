@@ -126,11 +126,11 @@ Rhea.Game.prototype = {
                 player2.body.velocity.y = Rhea.newState.velocityY;
 
                 if (Rhea.newState.velocityX > 0)
-                    if (player1.body.velocity.y < 0 || !player1.body.touching.down) player1.animations.play('jump-right');
-                    else player1.animations.play('right');
+                    if (player2.body.velocity.y < 0 || !player2.body.touching.down) player2.animations.play('jump-right');
+                    else player2.animations.play('right');
                 else if (Rhea.newState.velocityX < 0)
-                    if (player1.body.velocity.y < 0 || !player1.body.touching.down) player1.animations.play('jump-left');
-                    else player1.animations.play('left');
+                    if (player2.body.velocity.y < 0 || !player2.body.touching.down) player2.animations.play('jump-left');
+                    else player2.animations.play('left');
             }
                 //player2.animations.stop();
         }
