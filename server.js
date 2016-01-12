@@ -9,15 +9,13 @@ app.use(express.static(__dirname));
 var clients = {};
   
 //get EurecaServer class
-var EurecaServer = require('eureca.io').EurecaServer;
+var Eureca = require('eureca.io')
 
 //create an instance of EurecaServer
-var eurecaServer = new EurecaServer({allow:['setId', 'spawnEnemy', 'kill', 'updateState']});
+var eurecaServer = new Eureca.Server({allow:['setId', 'spawnEnemy', 'kill', 'updateState', 'clientsNum']});
 
 //attach eureca.io to our http server
 eurecaServer.attach(server);
-
-
 
 
 //eureca.io provides events to detect clients connect/disconnect
@@ -31,9 +29,11 @@ eurecaServer.onConnect(function (conn) {
 	
 	//register the client
 	clients[conn.id] = {id:conn.id, remote:remote}
-	
+
+    var player_id = 1;
+
 	//here we call setId (defined in the client side)
-	remote.setId(conn.id);	
+	remote.setId(conn.id, player_id);
 });
 
 //detect client disconnection
@@ -50,7 +50,10 @@ eurecaServer.onDisconnect(function (conn) {
 		
 		//here we call kill() method defined in the client side
 		remote.kill(conn.id);
-	}	
+	}
+
+    //remove from clients array
+    //clients.splice(conn.id, 1);
 });
 
 
@@ -70,7 +73,6 @@ eurecaServer.exports.handshake = function()
 	}
 }
 
-
 //be exposed to client side
 eurecaServer.exports.handleKeys = function (keys) {
 	var conn = this.connection;
@@ -84,5 +86,19 @@ eurecaServer.exports.handleKeys = function (keys) {
 		//keep last known state so we can send it to new connected clients
 		clients[c].laststate = keys;
 	}
+}
+
+eurecaServer.exports.clientsNum = function()
+{
+    var conn = this.connection;
+    var remote = clients[conn.id].remote;
+    var num = 0;
+    for (var c in clients)
+    {
+        num++;
+    }
+
+    //console.log(remote);
+    remote.clientsNum(num);
 }
 server.listen(8000);

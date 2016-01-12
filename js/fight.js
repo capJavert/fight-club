@@ -1,7 +1,9 @@
 // globals
 var myId=0;
+var player_id=0;
 var fighter;
 var player;
+var fighters;
 var fightersList;
 var cursors;
 
@@ -19,13 +21,11 @@ var eurecaClientSetup = function() {
 
 	//methods defined under "exports" namespace become available in the server side
 
-	eurecaClient.exports.setId = function(id)
+	eurecaClient.exports.setId = function(id, pid)
 	{
 		//create() is moved here to make sure nothing is created before uniq id assignation
 		myId = id;
-		create();
-		eurecaServer.handshake();
-		ready = true;
+        eurecaServer.clientsNum();
 	}
 
 	eurecaClient.exports.kill = function(id)
@@ -42,9 +42,19 @@ var eurecaClientSetup = function() {
 		if (i == myId) return; //this is me
 
 		console.log('SPAWN');
-		var tnk = new Fighter(i, game, fighter);
+		if(player_id==1) var tnk = new Fighter(i, game, fighter, 3);
+        else var tnk = new Fighter(i, game, fighter, 4);
 		fightersList[i] = tnk;
 	}
+
+    eurecaClient.exports.clientsNum = function(num)
+    {
+        player_id = num;
+        console.log(player_id);
+        create();
+        eurecaServer.handshake();
+        ready = true;
+    }
 
 	eurecaClient.exports.updateState = function(id, state)
 	{
@@ -58,7 +68,7 @@ var eurecaClientSetup = function() {
 }
 
 
-Fighter = function (index, game, player) {
+Fighter = function (index, game, player, frame) {
 	this.cursor = {
 		left:false,
 		right:false,
@@ -82,8 +92,9 @@ Fighter = function (index, game, player) {
 
     this.alive = true;
 
-    this.fighter = game.add.sprite(x, y, 'fighter', 4);
+    this.fighter = game.add.sprite(x, y, 'fighter', frame);
     this.fighter.id = index;
+    this.fighter.defaultStance = frame;
 
     // enable physics on the player
     game.physics.arcade.enable(this.fighter);
@@ -154,12 +165,13 @@ Fighter.prototype.update = function() {
     {
         //  Stand still
         this.fighter.animations.stop();
-        this.fighter.frame = 4;
+        this.fighter.frame = this.fighter.defaultStance;
     }
 
     //  diffrent animation while falling
     if (!this.fighter.body.touching.down) {
-        this.fighter.animations.play('jump-right');
+        if(this.fighter.defaultStance==4)this.fighter.animations.play('jump-right');
+        if(this.fighter.defaultStance==3)this.fighter.animations.play('jump-left');
     }
 
     //  Allow the player to jump if they are touching the ground.
@@ -208,7 +220,7 @@ function preload () {
 
     game.load.image('sky', '../assets/sky.png');
     game.load.image('ground', '../assets/platform.png');
-    game.load.spritesheet('fighter', '../assets/fighter.png', 52, 70);
+    game.load.spritesheet('fighter', '../assets/fighter.png', 111, 150);
 }
 
 
@@ -224,6 +236,9 @@ function create () {
     //  The platforms group contains the ground and the 2 ledges we can jump on
     platforms = game.add.group();
 
+    // add fighters group
+    fighters = game.add.group();
+
     //  We will enable physics for any object that is created in this group
     platforms.enableBody = true;
 
@@ -236,22 +251,23 @@ function create () {
     //  This stops it from falling away when you jump on it
     ground.body.immovable = true;
 
-    //  Now let's create two ledges
-    var ledge = platforms.create(400, 400, 'ground');
-
-    ledge.body.immovable = true;
-
-    ledge = platforms.create(-150, 250, 'ground');
-
-    ledge.body.immovable = true;
-
     fightersList = {};
 
-	player = new Fighter(myId, game, fighter);
+    //choose player side
+    if(player_id==1)
+        player = new Fighter(myId, game, fighter, 4);
+    else
+        player = new Fighter(myId, game, fighter, 3);
+
 	fightersList[myId] = player;
 	fighter = player.fighter;
-	fighter.x=40;
-	fighter.y=450;
+
+    if(player_id==1)
+        fighter.x=50;
+    else
+        fighter.x=650;
+
+	fighter.y=0;
 
     cursors = game.input.keyboard.createCursorKeys();
 }
@@ -266,6 +282,7 @@ function update () {
 	//player.input.fire = game.input.activePointer.isDown;
 
     game.physics.arcade.collide(fighter, platforms);
+    game.physics.arcade.collide(fighter, fighters);
     //game.physics.arcade.collide(player, Rhea.player2);
 	
     for (var i in fightersList)
@@ -281,6 +298,7 @@ function update () {
 			
 				var targetFighter = fightersList[j].fighter;
 
+                game.physics.arcade.collide(targetFighter, fighter);
                 game.physics.arcade.collide(targetFighter, platforms);
 			
 			}
