@@ -132,8 +132,8 @@ Fighter = function (index, game, player, frame) {
     this.fighter.defaultStance = frame;
 
     // enable physics on the player
-    //game.physics.arcade.enable(this.fighter);
-    game.physics.startSystem(Phaser.Physics.P2JS);
+    game.physics.arcade.enable(this.fighter);
+    //game.physics.startSystem(Phaser.Physics.P2JS);
 
     //  Player physics properties. Give the little guy a no bounce.
     this.fighter.body.bounce.y = 0;
@@ -287,7 +287,7 @@ function preload () {
     game.load.image('health', '../assets/health.png');
     game.load.spritesheet('fighter', '../assets/fighter.png', 111, 150);
     game.load.spritesheet('fighter_reverse', '../assets/fighter_reverse.png', 111, 150);
-    game.load.physics('physicsData', '../assets/fighter.json');
+    //game.load.physics('physicsData', '../assets/fighter.json');
 }
 
 function create () {

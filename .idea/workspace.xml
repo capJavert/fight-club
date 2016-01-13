@@ -1,19 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4db2701f-b6d2-4e40-a5e0-5b1b45a1a5ec" name="Default" comment="reskin&#10;cool bg&#10;waiting for players screen&#10;fighting moves&#10;win/lose&#10;health">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/fight.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/fighter_reverse.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/forest.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/health.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/loader.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/win.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/fighter.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/fighter_reverse.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/fighter.png" afterPath="$PROJECT_DIR$/assets/fighter.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/platform.png" afterPath="$PROJECT_DIR$/assets/platform.png" />
+    <list default="true" id="4db2701f-b6d2-4e40-a5e0-5b1b45a1a5ec" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/fight.js" afterPath="$PROJECT_DIR$/js/fight.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server.js" afterPath="$PROJECT_DIR$/server.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="fight-club.iws" />
@@ -42,8 +31,8 @@
       <file leaf-file-name="fight.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/fight.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.19022688" vertical-offset="1914" max-vertical-offset="7514">
-              <caret line="119" column="0" selection-start-line="119" selection-start-column="0" selection-end-line="119" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.33211678" vertical-offset="4731" max-vertical-offset="7514">
+              <caret line="289" column="6" selection-start-line="289" selection-start-column="6" selection-end-line="289" selection-end-column="6" />
               <folding />
             </state>
           </provider>
@@ -334,13 +323,20 @@
       <option name="project" value="LOCAL" />
       <updated>1452623127286</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="reskin&#10;cool bg&#10;waiting for players screen&#10;fighting moves&#10;win/lose&#10;health">
+      <created>1452665441674</created>
+      <option name="number" value="00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1452665441674</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -356,7 +352,6 @@
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -384,7 +379,8 @@
     <MESSAGE value="." />
     <MESSAGE value="novi sustav za prihvat igraca" />
     <MESSAGE value="kolizija i usmjerenje" />
-    <option name="LAST_COMMIT_MESSAGE" value="kolizija i usmjerenje" />
+    <MESSAGE value="reskin&#10;cool bg&#10;waiting for players screen&#10;fighting moves&#10;win/lose&#10;health" />
+    <option name="LAST_COMMIT_MESSAGE" value="reskin&#10;cool bg&#10;waiting for players screen&#10;fighting moves&#10;win/lose&#10;health" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -577,8 +573,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/fight.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.19022688" vertical-offset="1914" max-vertical-offset="7514">
-          <caret line="119" column="0" selection-start-line="119" selection-start-column="0" selection-end-line="119" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.33211678" vertical-offset="4731" max-vertical-offset="7514">
+          <caret line="289" column="6" selection-start-line="289" selection-start-column="6" selection-end-line="289" selection-end-column="6" />
           <folding />
         </state>
       </provider>
