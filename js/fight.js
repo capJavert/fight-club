@@ -9,7 +9,7 @@ var healthBar2;
 var fightersList;
 var cursors;
 var kicks;
-var unlocked = 0;
+var unlocked = 1;
 
 var ready = false;
 var eurecaServer;
@@ -221,8 +221,8 @@ Fighter.prototype.update = function() {
 
     //  diffrent animation while falling
     if (!this.fighter.body.touching.down && unlocked) {
-        if(this.fighter.defaultStance==4)this.fighter.animations.play('jump-right');
-        if(this.fighter.defaultStance==3)this.fighter.animations.play('jump-left');
+        if(this.fighter.defaultStance==4)this.fighter.frame = 5;
+        if(this.fighter.defaultStance==3)this.fighter.frame = 2;
     }
 
     //  Allow the player to jump if they are touching the ground.
@@ -411,14 +411,14 @@ function update () {
             game.physics.arcade.collide(fighter, targetFighter);
 
             if (player.input.a && fighter.body.touching.down && !fightersList[i].cursor.d) {
-                fightersList[i].health -= 3;
+                fightersList[i].health -= 1;
                 console.log(fightersList[i].health);
             }
             if (player.input.s && !fighter.body.touching.down) {
                 if(fightersList[i].cursor.d)
-                    fightersList[i].health -= 1;
+                    fightersList[i].health -= 0.5;
                 else
-                    fightersList[i].health -= 2;
+                    fightersList[i].health -= 1.5;
                 console.log(fightersList[i].health);
             }
 
