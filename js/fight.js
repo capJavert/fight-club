@@ -9,7 +9,7 @@ var healthBar2;
 var fightersList;
 var cursors;
 var kicks;
-var unlocked = 1;
+var unlocked = 0;
 
 var ready = false;
 var eurecaServer;
