@@ -1,33 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4db2701f-b6d2-4e40-a5e0-5b1b45a1a5ec" name="Default" comment="">
-      <change type="DELETED" beforePath="D:\xampp\htdocs\test.example.com\fight-club\assets\bullet.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\test.example.com\fight-club\assets\dark_grass.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\test.example.com\fight-club\assets\earth.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\test.example.com\fight-club\assets\enemy-tanks.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\test.example.com\fight-club\assets\light_grass.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\test.example.com\fight-club\assets\light_sand.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\test.example.com\fight-club\assets\logo.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\test.example.com\fight-club\assets\logo.psd" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\test.example.com\fight-club\assets\sand.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\test.example.com\fight-club\assets\scorched_earth.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\test.example.com\fight-club\assets\shadow.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\test.example.com\fight-club\assets\tank1.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\test.example.com\fight-club\assets\tank2.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\test.example.com\fight-club\assets\tank3.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\test.example.com\fight-club\assets\tank4.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\test.example.com\fight-club\assets\tank5.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\test.example.com\fight-club\assets\tank6.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\test.example.com\fight-club\assets\tanks.json" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\test.example.com\fight-club\assets\tanks.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\test.example.com\fight-club\assets\tanks.tps" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\test.example.com\fight-club\assets\tracks.png" afterPath="" />
-      <change type="DELETED" beforePath="D:\xampp\htdocs\test.example.com\fight-club\assets\turret.png" afterPath="" />
+    <list default="true" id="4db2701f-b6d2-4e40-a5e0-5b1b45a1a5ec" name="Default" comment="reskin&#10;cool bg&#10;waiting for players screen&#10;fighting moves&#10;win/lose&#10;health">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/fight.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/fighter_reverse.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/forest.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/health.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/loader.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/win.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/fighter.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/fighter_reverse.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/fighter.png" afterPath="$PROJECT_DIR$/assets/fighter.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/platform.png" afterPath="$PROJECT_DIR$/assets/platform.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/fight.js" afterPath="$PROJECT_DIR$/js/fight.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server.js" afterPath="$PROJECT_DIR$/server.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MOVED" beforePath="D:\xampp\htdocs\test.example.com\fight-club\assets\fighter.png" afterPath="$PROJECT_DIR$/assets/fighter_small.png" />
     </list>
     <ignored path="fight-club.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -55,8 +42,8 @@
       <file leaf-file-name="fight.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/fight.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5497382" vertical-offset="450" max-vertical-offset="5525">
-              <caret line="45" column="54" selection-start-line="45" selection-start-column="54" selection-end-line="45" selection-end-column="54" />
+            <state vertical-scroll-proportion="0.19022688" vertical-offset="1914" max-vertical-offset="7514">
+              <caret line="119" column="0" selection-start-line="119" selection-start-column="0" selection-end-line="119" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -65,8 +52,8 @@
       <file leaf-file-name="server.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-18.36" vertical-offset="1258" max-vertical-offset="1853">
-              <caret line="101" column="27" selection-start-line="101" selection-start-column="27" selection-end-line="101" selection-end-column="27" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="1586" max-vertical-offset="2159">
+              <caret line="81" column="39" selection-start-line="81" selection-start-column="39" selection-end-line="81" selection-end-column="39" />
               <folding />
             </state>
           </provider>
@@ -85,7 +72,7 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.230769" vertical-offset="0" max-vertical-offset="459">
+            <state vertical-scroll-proportion="0.0" vertical-offset="136" max-vertical-offset="459">
               <caret line="8" column="38" selection-start-line="8" selection-start-column="38" selection-end-line="8" selection-end-column="38" />
               <folding />
             </state>
@@ -341,21 +328,26 @@
       <option name="project" value="LOCAL" />
       <updated>1452614473550</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="kolizija i usmjerenje">
+      <created>1452623127286</created>
+      <option name="number" value="00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1452623127286</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2688822" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27643505" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32843137" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -364,6 +356,7 @@
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -390,7 +383,8 @@
     <MESSAGE value="player2 animations fix" />
     <MESSAGE value="." />
     <MESSAGE value="novi sustav za prihvat igraca" />
-    <option name="LAST_COMMIT_MESSAGE" value="novi sustav za prihvat igraca" />
+    <MESSAGE value="kolizija i usmjerenje" />
+    <option name="LAST_COMMIT_MESSAGE" value="kolizija i usmjerenje" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -399,6 +393,70 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/js/fight.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="5576">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1258" max-vertical-offset="1853">
+          <caret line="101" column="27" selection-start-line="101" selection-start-column="27" selection-end-line="101" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="102">
+          <caret line="0" column="44" selection-start-line="0" selection-start-column="44" selection-end-line="0" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="136" max-vertical-offset="459">
+          <caret line="8" column="38" selection-start-line="8" selection-start-column="38" selection-end-line="8" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/fight.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="5525">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1258" max-vertical-offset="1853">
+          <caret line="101" column="27" selection-start-line="101" selection-start-column="27" selection-end-line="101" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="102">
+          <caret line="0" column="44" selection-start-line="0" selection-start-column="44" selection-end-line="0" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="136" max-vertical-offset="459">
+          <caret line="8" column="38" selection-start-line="8" selection-start-column="38" selection-end-line="8" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/server.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="447" max-vertical-offset="1547">
@@ -459,7 +517,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.20238096" vertical-offset="0" max-vertical-offset="588">
           <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -475,9 +532,30 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.230769" vertical-offset="0" max-vertical-offset="459">
+        <state vertical-scroll-proportion="0.0" vertical-offset="136" max-vertical-offset="459">
           <caret line="8" column="38" selection-start-line="8" selection-start-column="38" selection-end-line="8" selection-end-column="38" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/eureca.io/lib/js/primus.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2425829" vertical-offset="10673" max-vertical-offset="118796">
+          <caret line="636" column="21" selection-start-line="636" selection-start-column="21" selection-end-line="636" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/eureca.io/lib/EurecaServer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-291.04" vertical-offset="0" max-vertical-offset="26758">
+          <caret line="428" column="40" selection-start-line="428" selection-start-column="32" selection-end-line="428" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/eureca.io/lib/EurecaClient.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.18613139" vertical-offset="0" max-vertical-offset="28237">
+          <caret line="6" column="16" selection-start-line="6" selection-start-column="16" selection-end-line="6" selection-end-column="16" />
         </state>
       </provider>
     </entry>
@@ -489,42 +567,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/eureca.io/lib/js/primus.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2425829" vertical-offset="10673" max-vertical-offset="118796">
-          <caret line="636" column="21" selection-start-line="636" selection-start-column="21" selection-end-line="636" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/eureca.io/lib/EurecaServer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-291.04" vertical-offset="0" max-vertical-offset="26758">
-          <caret line="428" column="40" selection-start-line="428" selection-start-column="32" selection-end-line="428" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/eureca.io/lib/EurecaClient.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.18613139" vertical-offset="0" max-vertical-offset="28237">
-          <caret line="6" column="16" selection-start-line="6" selection-start-column="16" selection-end-line="6" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-18.36" vertical-offset="1258" max-vertical-offset="1853">
-          <caret line="101" column="27" selection-start-line="101" selection-start-column="27" selection-end-line="101" selection-end-column="27" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="1586" max-vertical-offset="2159">
+          <caret line="81" column="39" selection-start-line="81" selection-start-column="39" selection-end-line="81" selection-end-column="39" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/fight.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5497382" vertical-offset="450" max-vertical-offset="5525">
-          <caret line="45" column="54" selection-start-line="45" selection-start-column="54" selection-end-line="45" selection-end-column="54" />
+        <state vertical-scroll-proportion="0.19022688" vertical-offset="1914" max-vertical-offset="7514">
+          <caret line="119" column="0" selection-start-line="119" selection-start-column="0" selection-end-line="119" selection-end-column="0" />
           <folding />
         </state>
       </provider>

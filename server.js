@@ -12,7 +12,7 @@ var clients = {};
 var Eureca = require('eureca.io')
 
 //create an instance of EurecaServer
-var eurecaServer = new Eureca.Server({allow:['setId', 'spawnEnemy', 'kill', 'updateState', 'clientsNum']});
+var eurecaServer = new Eureca.Server({allow:['setId', 'spawnEnemy', 'kill', 'updateState', 'clientsNum', 'end', 'updateHealth']});
 
 //attach eureca.io to our http server
 eurecaServer.attach(server);
@@ -56,7 +56,6 @@ eurecaServer.onDisconnect(function (conn) {
     //clients.splice(conn.id, 1);
 });
 
-
 eurecaServer.exports.handshake = function()
 {
 	for (var c in clients)
@@ -88,6 +87,15 @@ eurecaServer.exports.handleKeys = function (keys) {
 	}
 }
 
+//be exposed to client side
+eurecaServer.exports.handleHealth = function (health) {
+    for (var c in clients)
+    {
+        var remote = clients[c].remote;
+        remote.updateHealth(c, health);
+    }
+}
+
 eurecaServer.exports.clientsNum = function()
 {
     var conn = this.connection;
@@ -101,4 +109,14 @@ eurecaServer.exports.clientsNum = function()
     //console.log(remote);
     remote.clientsNum(num);
 }
+
+eurecaServer.exports.win = function(myId)
+{
+    for (var c in clients)
+    {
+        var remote = clients[c].remote;
+        remote.end(myId);
+    }
+}
+
 server.listen(8000);
