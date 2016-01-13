@@ -408,7 +408,8 @@ function update () {
 
         //check if hit happend
         if (game.physics.arcade.overlap(fighter, targetFighter) && i!=myId) {
-            game.physics.arcade.collide(fighter, targetFighter);
+            if(targetFighter.body.x > fighter.body.x && targetFighter.x < fighter.body.x+110)
+                game.physics.arcade.collide(fighter, targetFighter);
 
             if (player.input.a && fighter.body.touching.down && !fightersList[i].cursor.d) {
                 fightersList[i].health -= 1;
