@@ -92,8 +92,11 @@ var eurecaClientSetup = function() {
 
     eurecaClient.exports.updateHealth = function(id, health)
     {
-        player.health = health;
-        healthbar1.scale.setTo(player.health/100,1);
+        if (fightersList[id]) {
+            fightersList[id].health = health;
+            if(id==myId)
+                healthBar1.scale.setTo(fightersList[id].health/100,1);
+        }
     }
 }
 
@@ -104,7 +107,8 @@ Fighter = function (index, game, player, frame) {
 		right:false,
 		up:false,
 		a:false,
-        s:false
+        s:false,
+        d:false
 	}
 
 	this.input = {
@@ -112,7 +116,8 @@ Fighter = function (index, game, player, frame) {
 		right:false,
 		up:false,
         a:false,
-        s:false
+        s:false,
+        d:false
 	}
 
     var x = 0;
@@ -149,6 +154,8 @@ Fighter = function (index, game, player, frame) {
     this.fighter.animations.add('kick-right', [7], 100, true);
     this.fighter.animations.add('jump-kick-left', [1], 50, true);
     this.fighter.animations.add('jump-kick-right', [6], 50, true);
+    this.fighter.animations.add('block-left', [8], 50, true);
+    this.fighter.animations.add('block-right', [9], 50, true);
 };
 
 Fighter.prototype.update = function() {
@@ -157,7 +164,8 @@ Fighter.prototype.update = function() {
 		this.cursor.right != this.input.right ||
 		this.cursor.up != this.input.up ||
         this.cursor.a != this.input.a ||
-        this.cursor.s != this.input.s
+        this.cursor.s != this.input.s ||
+        this.cursor.d != this.input.d
 	);
 
 	if (inputChanged)
@@ -199,9 +207,16 @@ Fighter.prototype.update = function() {
     }
     else
     {
-        //  Stand still
-        this.fighter.animations.stop();
-        this.fighter.frame = this.fighter.defaultStance;
+        if (this.cursor.d && this.fighter.body.touching.down && unlocked)
+        {
+            // block
+            if(this.fighter.defaultStance==4)this.fighter.animations.play('block-right');
+            if(this.fighter.defaultStance==3)this.fighter.animations.play('block-left');
+        } else {
+            //  Stand still
+            this.fighter.animations.stop();
+            this.fighter.frame = this.fighter.defaultStance;
+        }
     }
 
     //  diffrent animation while falling
@@ -327,13 +342,13 @@ function create () {
     if(player_id==1) {
         player = new Fighter(myId, game, fighter, 4);
         //health bars
-        healthbar1 = platforms.create(10, 10, 'health');
-        healthbar2 = platforms.create(635, 10, 'health');
+        healthBar1 = platforms.create(10, 10, 'health');
+        healthBar2 = platforms.create(635, 10, 'health');
     } else {
         player = new Fighter(myId, game, fighter, 3);
         //health bars
-        healthbar1 = platforms.create(635, 10, 'health');
-        healthbar2 = platforms.create(10, 10, 'health');
+        healthBar1 = platforms.create(635, 10, 'health');
+        healthBar2 = platforms.create(10, 10, 'health');
     }
 
 	fightersList[myId] = player;
@@ -347,7 +362,8 @@ function create () {
     cursors = game.input.keyboard.createCursorKeys();
     kicks = {
         a: game.input.keyboard.addKey(Phaser.Keyboard.A),
-        s: game.input.keyboard.addKey(Phaser.Keyboard.S)
+        s: game.input.keyboard.addKey(Phaser.Keyboard.S),
+        d: game.input.keyboard.addKey(Phaser.Keyboard.D)
     };
 }
 
@@ -362,6 +378,7 @@ function update () {
 	player.input.up = cursors.up.isDown;
     player.input.a = kicks.a.isDown;
     player.input.s = kicks.s.isDown;
+    player.input.d = kicks.d.isDown;
 
     game.physics.arcade.collide(fighter, platforms);
     //game.physics.arcade.collide(dummy.fighter, platforms);
@@ -393,24 +410,31 @@ function update () {
         if (game.physics.arcade.overlap(fighter, targetFighter) && i!=myId) {
             game.physics.arcade.collide(fighter, targetFighter);
 
-            if (player.input.a && fighter.body.touching.down && (targetFighter.body.velocity.x != 0 || targetFighter.body.velocity.y != 0)) {
-                fightersList[i].health -= 5;
+            if (player.input.a && fighter.body.touching.down && !fightersList[i].cursor.d) {
+                fightersList[i].health -= 3;
                 console.log(fightersList[i].health);
             }
             if (player.input.s && !fighter.body.touching.down) {
-                fightersList[i].health -= 2.5;
+                if(fightersList[i].cursor.d)
+                    fightersList[i].health -= 1;
+                else
+                    fightersList[i].health -= 2;
                 console.log(fightersList[i].health);
             }
 
             //resize healthbar
-            healthbar2.scale.setTo(fightersList[i].health/100,1);
+            //healthBar2.scale.setTo(fightersList[i].health/100,1);
 
             if(fightersList[i].health<=0)
                 fightersList[i].alive = 0;
         }
 
         //send health data
-        eurecaServer.handleHealth(fightersList[i].health);
+
+        if(i!=myId) {//console.log(fightersList[i].health);
+            healthBar2.scale.setTo(fightersList[i].health/100,1);
+            eurecaServer.handleHealth(i, fightersList[i].health);
+        }
 
         if (fightersList[i].alive)
         {

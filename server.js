@@ -28,7 +28,7 @@ eurecaServer.onConnect(function (conn) {
     var remote = eurecaServer.getClient(conn.id);    
 	
 	//register the client
-	clients[conn.id] = {id:conn.id, remote:remote}
+	clients[conn.id] = {id:conn.id, remote:remote, health:100}
 
     var player_id = 1;
 
@@ -88,11 +88,15 @@ eurecaServer.exports.handleKeys = function (keys) {
 }
 
 //be exposed to client side
-eurecaServer.exports.handleHealth = function (health) {
+eurecaServer.exports.handleHealth = function (id, health) {
+    var conn = this.connection;
+    //var remote = clients[conn.id].remote;
+    clients[id].health = health;
+
     for (var c in clients)
     {
         var remote = clients[c].remote;
-        remote.updateHealth(c, health);
+        remote.updateHealth(c, clients[c].health);
     }
 }
 
