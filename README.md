@@ -5,10 +5,10 @@
 You will need linux/windows server or you can run game on localhost.<br />
 Game is running on node.js server and is powered by phaser.js HTML5 game engine. <br />
 <br />
-Install nodejs:<br />
+<b>Install nodejs:</b><br />
 $ curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -
-$ sudo apt-get install -y nodejs
-Install/Run game:
+$ sudo apt-get install -y nodejs<br />
+<b>Install/Run game:</b>
 $ git clone https://github.com/capJavert/fight-club.git fight-club<br />
 $ cd fight-club<br />
 $ nodejs server.js<br />
@@ -22,17 +22,17 @@ After game is finished clone tabs and run again.
 </p>
 <h3>Controls</h3>
 <p>
-Arrow keys:
-UP -> jump
-LEFT, RIGHT -> move
-A -> basic kick
-UP + S -> jump kick
-D -> block
+Arrow keys:<br />
+UP -> jump<br />
+LEFT, RIGHT -> move<br />
+A -> basic kick<br />
+UP + S -> jump kick<br />
+D -> block<br />
 </p>
 <h3>Future upgrades</h3>
 <p>
-- start ne game feature
-- smooth up game controls
-- waiting room
-- alternative fighters
+- start ne game feature<br />
+- smooth up game controls<br />
+- waiting room<br />
+- alternative fighters<br />
 </p>
