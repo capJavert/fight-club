@@ -13,7 +13,7 @@ var unlocked = 0;
 
 var ready = false;
 var eurecaServer;
-//this function will handle client communication with the server
+// handle client communication with the server
 var eurecaClientSetup = function() {
 	//create an instance of eureca.io client
 	var eurecaClient = new Eureca.Client();
@@ -25,13 +25,14 @@ var eurecaClientSetup = function() {
 
 	//methods defined under "exports" namespace become available in the server side
 
+    // get id and start game
 	eurecaClient.exports.setId = function(id, pid)
 	{
-		//create() is moved here to make sure nothing is created before uniq id assignation
 		myId = id;
         eurecaServer.clientsNum();
 	}
 
+    //kill player
 	eurecaClient.exports.kill = function(id)
 	{
 		if (fightersList[id]) {
@@ -40,6 +41,7 @@ var eurecaClientSetup = function() {
 		}
 	}
 
+    // spawn player
 	eurecaClient.exports.spawnEnemy = function(i, x, y)
 	{
         //console.log((i==myId));
@@ -51,6 +53,8 @@ var eurecaClientSetup = function() {
 		fightersList[i] = tnk;
 	}
 
+
+    // check number of clients connected
     eurecaClient.exports.clientsNum = function(num)
     {
         if(!player_id) {
@@ -100,6 +104,7 @@ var eurecaClientSetup = function() {
     }
 }
 
+//player class
 
 Fighter = function (index, game, player, frame) {
 	this.cursor = {
@@ -182,7 +187,7 @@ Fighter.prototype.update = function() {
 		}
 	}
 
-	//this.cursor value is now updated by eurecaClient.exports.updateState method
+	//this.cursor value is updated by eurecaClient.exports.updateState method
 
     //reset velocity
     this.fighter.body.velocity.x = 0;
@@ -267,6 +272,8 @@ Fighter.prototype.kill = function() {
 var game = new Phaser.Game(800, 600, Phaser.AUTO, 'fight-club', { preload: preload, create: eurecaClientSetup, update: update, render: render });
 
 
+// preload game assets
+
 function preload () {
     //scale and responsive
     if (game.device.desktop)
@@ -315,27 +322,22 @@ function create () {
 
     logo = game.add.sprite(0, 0, 'loader');
 
-    //  The platforms group contains the ground and the 2 ledges we can jump on
     platforms = game.add.group();
 
     // add fighters group
     //fighters = game.add.group();
 
-    //  We will enable physics for any object that is created in this group
+    //  enable physics
     platforms.enableBody = true;
 
     // Here we create the ground.
     var ground = platforms.create(0, game.world.height - 25, 'ground');
 
-    //  Scale it to fit the width of the game (the original sprite is 400x32 in size)
     ground.scale.setTo(16, 4);
 
-    //  This stops it from falling away when you jump on it
     ground.body.immovable = true;
 
-    //  Scale it to fit the width of the game (the original sprite is 400x32 in size)
-    //ground.scale.setTo(16, 4);
-
+    //local information array
     fightersList = {};
 
     //choose player side
@@ -423,9 +425,6 @@ function update () {
                 console.log(fightersList[i].health);
             }
 
-            //resize healthbar
-            //healthBar2.scale.setTo(fightersList[i].health/100,1);
-
             if(fightersList[i].health<=0)
                 fightersList[i].alive = 0;
         }
@@ -441,7 +440,7 @@ function update () {
         {
             fightersList[i].update();
         } else {
-            //lock game
+            //lock game if someone won
             win = game.add.sprite(0, 0, 'win');
             unlocked = 0;
             fighter.animations.stop();
@@ -452,10 +451,7 @@ function update () {
     }
 }
 
-function bulletHitPlayer (fighter, bullet) {
-
-    bullet.kill();
-}
+// render game
 
 function render () {}
 

@@ -2,13 +2,11 @@ var express = require('express')
   , app = express(app)
   , server = require('http').createServer(app);
 
-// serve static files from the current directory
 app.use(express.static(__dirname));
 
-//we'll keep clients data here
+// clients info
 var clients = {};
-  
-//get EurecaServer class
+
 var Eureca = require('eureca.io')
 
 //create an instance of EurecaServer
@@ -17,14 +15,10 @@ var eurecaServer = new Eureca.Server({allow:['setId', 'spawnEnemy', 'kill', 'upd
 //attach eureca.io to our http server
 eurecaServer.attach(server);
 
-
-//eureca.io provides events to detect clients connect/disconnect
-
 //detect client connection
 eurecaServer.onConnect(function (conn) {    
     console.log('New Client id=%s ', conn.id, conn.remoteAddress);
-	
-	//the getClient method provide a proxy allowing us to call remote client functions
+
     var remote = eurecaServer.getClient(conn.id);    
 	
 	//register the client
@@ -32,7 +26,7 @@ eurecaServer.onConnect(function (conn) {
 
     var player_id = 1;
 
-	//here we call setId (defined in the client side)
+	//call setId client side)
 	remote.setId(conn.id, player_id);
 });
 
@@ -47,14 +41,12 @@ eurecaServer.onDisconnect(function (conn) {
 	for (var c in clients)
 	{
 		var remote = clients[c].remote;
-		
-		//here we call kill() method defined in the client side
+
 		remote.kill(conn.id);
 	}
-
-    //remove from clients array
-    //clients.splice(conn.id, 1);
 });
+
+//exposed to client side
 
 eurecaServer.exports.handshake = function()
 {
@@ -72,7 +64,6 @@ eurecaServer.exports.handshake = function()
 	}
 }
 
-//be exposed to client side
 eurecaServer.exports.handleKeys = function (keys) {
 	var conn = this.connection;
 	var updatedClient = clients[conn.id];
@@ -87,7 +78,6 @@ eurecaServer.exports.handleKeys = function (keys) {
 	}
 }
 
-//be exposed to client side
 eurecaServer.exports.handleHealth = function (id, health) {
     var conn = this.connection;
     //var remote = clients[conn.id].remote;
@@ -123,4 +113,5 @@ eurecaServer.exports.win = function(myId)
     }
 }
 
+// game works on port :2016
 server.listen(2016);
