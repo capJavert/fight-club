@@ -36,3 +36,8 @@ D -> block<br />
 - waiting room<br />
 - alternative fighters<br />
 </p>
+
+<h3>Credits</h3>
+<p>
+<a href="https://github.com/ezelia/eureca.io/">https://github.com/ezelia/eureca.io/</a>
+</p>
