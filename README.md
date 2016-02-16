@@ -18,7 +18,7 @@ $ nodejs server.js<br />
 Conncet to your server where you run server.js on port :2016<br />
 or if you are running game on local then localhost:2016
 Game starts when both players join.
-After game is finished clone tabs and run again.
+After game is finished close tabs and run again.
 </p>
 <h3>Controls</h3>
 <p>
@@ -31,7 +31,7 @@ D -> block<br />
 </p>
 <h3>Future upgrades</h3>
 <p>
-- start ne game feature<br />
+- start new game feature<br />
 - smooth up game controls<br />
 - waiting room<br />
 - alternative fighters<br />
