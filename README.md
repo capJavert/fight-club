@@ -4,7 +4,6 @@
 ### Install
 You will need linux/windows server or you can run game on localhost.  
 Game is running on node.js server and is powered by phaser.js HTML5 game engine.  
-**Compatible with NodeJS 6.x**
 
 `$ git clone https://github.com/capJavert/fight-club.git fight-club`  
 `$ cd fight-club`  

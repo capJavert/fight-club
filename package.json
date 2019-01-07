@@ -4,8 +4,8 @@
   "description": "HTML5 powered Multiplayer Fighter game.",
   "main": "server.js",
   "dependencies": {
-    "engine.io": "^1.5.4",
-    "eureca.io": "^0.6.41",
+    "engine.io": "^3.3.2",
+    "eureca.io": "^0.8.2",
     "express": "^4.16.4"
   },
   "devDependencies": {},
@@ -18,7 +18,7 @@
     "url": "git+https://github.com/capJavert/fight-club.git"
   },
   "keywords": [
-    "game,html5,fighting-game,express"
+    "game,html5,fighting-game,express,phaser"
   ],
   "author": "capJavert",
   "license": "MIT",
