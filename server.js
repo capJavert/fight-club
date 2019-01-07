@@ -16,11 +16,11 @@ var eurecaServer = new Eureca.Server({allow:['setId', 'spawnEnemy', 'kill', 'upd
 eurecaServer.attach(server);
 
 //detect client connection
-eurecaServer.onConnect(function (conn) {    
+eurecaServer.onConnect(function (conn) {
     console.log('New Client id=%s ', conn.id, conn.remoteAddress);
 
-    var remote = eurecaServer.getClient(conn.id);    
-	
+    var remote = eurecaServer.getClient(conn.id);
+
 	//register the client
 	clients[conn.id] = {id:conn.id, remote:remote, health:100}
 
@@ -31,13 +31,13 @@ eurecaServer.onConnect(function (conn) {
 });
 
 //detect client disconnection
-eurecaServer.onDisconnect(function (conn) {    
+eurecaServer.onDisconnect(function (conn) {
     console.log('Client disconnected ', conn.id);
-	
+
 	var removeId = clients[conn.id].id;
-	
+
 	delete clients[conn.id];
-	
+
 	for (var c in clients)
 	{
 		var remote = clients[c].remote;
@@ -54,12 +54,12 @@ eurecaServer.exports.handshake = function()
 	{
 		var remote = clients[c].remote;
 		for (var cc in clients)
-		{		
+		{
 			//send latest known position
 			var x = clients[cc].laststate ? clients[cc].laststate.x:  0;
 			var y = clients[cc].laststate ? clients[cc].laststate.y:  0;
 
-			remote.spawnEnemy(clients[cc].id, x, y);		
+			remote.spawnEnemy(clients[cc].id, x, y);
 		}
 	}
 }
@@ -67,12 +67,12 @@ eurecaServer.exports.handshake = function()
 eurecaServer.exports.handleKeys = function (keys) {
 	var conn = this.connection;
 	var updatedClient = clients[conn.id];
-	
+
 	for (var c in clients)
 	{
 		var remote = clients[c].remote;
 		remote.updateState(updatedClient.id, keys);
-		
+
 		//keep last known state so we can send it to new connected clients
 		clients[c].laststate = keys;
 	}
@@ -114,4 +114,7 @@ eurecaServer.exports.win = function(myId)
 }
 
 // game works on port :2016
-server.listen(2016);
+server.listen(2016, function() {
+    console.log('Game ready!')
+    console.log('Play at http://localhost:2016')
+});
